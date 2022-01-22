@@ -1,28 +1,14 @@
-<!DOCTYPE html>
-<html lang="ja">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
-
-        <title>Memory-Photo</title>
-    </head>
-    <body>
-        <div class="container">
-            <h1 class="text-center">Memory-Photo</h1>
-              <% @lists.each do |list| %>
-                <div class="col-md-4">
-                  <%= list.title %>
-                  <%= list.created_at %>
-                </div>
-              <% end %>
+<div class="container">
+    <h2 class="text-center index_image_top"></h2>
+      <% @lists.each do |blog| %>
+        <div class="index_article">
+          <%= image_tag 'child.jpeg', class: 'index_image_article' %>
+            <p><%= link_to blog.title, blog_path(blog) %></p>
+              <span>
+                <%= blog.created_at.strftime("%Y年%m月%d日") %>
+              </span>
+              
         </div>
-        
-
-        <!-- Optional JavaScript -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
-    </body>
-</html>
+    <% end %>
+    
+</div>

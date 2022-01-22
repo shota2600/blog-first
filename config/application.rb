@@ -1,5 +1,6 @@
 require_relative "boot"
 
+
 require "rails"
 # Pick the frameworks you want:
 require "active_model/railtie"
@@ -35,4 +36,23 @@ module Blog
     # Don't generate system test files.
     config.generators.system_tests = nil
   end
+
+module TimeFormatSandbox
+  class Application < Rails::Application
+    # ...
+
+    # タイムゾーンを日本時間に設定
+    config.time_zone = 'Asia/Tokyo'
+  end
+end
+
+module TimeFormatSandbox
+  class Application < Rails::Application
+    # ...
+
+    # デフォルトのロケールを日本（ja）に設定
+    config.i18n.default_locale = :ja
+  end
+end
+
 end

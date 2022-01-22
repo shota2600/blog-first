@@ -1,3 +1,73 @@
 // Place all the styles related to the blogs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.body{
+  text-align: center;
+}
+
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  bd-placeholder-img-lg {
+  font-size: 3.5rem;
+  }
+}
+ 
+.index_image_top {
+  height: 500px;
+  background-image: url(bb.jpeg); 
+  background-size: cover;
+  font-size: 50px;
+}
+
+.index_image_article {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
+    
+.index_article {
+  border: 1px solid #f4f4f4;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  width: 300px;
+  height: 400px;
+  
+}
+
+.show_main {
+  border: 2px solid black;
+  width: 1200px;
+  height: 750px;
+}
+
+.show_image_article {
+  width: 80%;
+  height: 500px;
+  display: flex;
+  margin: 0 auto;
+  padding: 10px;
+  object-fit: cover;
+}
+
+.show_article {
+  border: 1px solid red;
+  width: 1200px;
+  height: 250px;
+  margin: 0px 0px 0px 0px;
+}
+
+.show_title {
+  
+}
+
+

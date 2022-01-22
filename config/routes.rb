@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources:blogs
-  root "blogs#index"
+  resources :blogs
+  
+  
+  root :to => "blogs#index"
+  post "blogs/new" => "blogs#index"
 end

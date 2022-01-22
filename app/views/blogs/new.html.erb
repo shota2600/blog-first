@@ -1,2 +1,22 @@
-<h1>Blogs#new</h1>
-<p>Find me in app/views/blogs/new.html.erb</p>
+<div class="container">
+  <div class="new_main">
+    <h1 class="new_title text-center">新規投稿</h1>
+      <%= image_tag 'child.jpeg', class: 'show_image_article' %>
+        <div class="new_form">
+          <%= form_for @list, url: {action: 'new'} do |f| %>
+            <div class="form_title">
+              <%= f.label :title, 'タイトル' %>
+              <%= f.text_field :title %>
+            </div>
+            <div class="form_body">
+              <%= f.label :body, 'コメント' %>
+              <%= f.text_area :body, rows: 10, class: 'form_contorol' %>
+            </div>
+            <div class="form_submit">
+              <%= f.submit '投稿' %>
+            </div>
+          <% end %>
+        </div>
+        <%= link_to 'ホーム一覧へ戻る', blogs_path %>
+      </div>
+  </div>

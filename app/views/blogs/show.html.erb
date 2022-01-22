@@ -1,2 +1,13 @@
-<h1>Blogs#show</h1>
-<p>Find me in app/views/blogs/show.html.erb</p>
+<div class="container">
+  <div class="show_main">
+    <%= image_tag 'child.jpeg', class: 'show_image_article' %>
+      <div class="show_article">
+        <h1 class="show_title text-center"><%= @list.title %></h1>
+        <p class="show_content"><%= @list.body %></p>
+        <span>
+          <%= @list.created_at.strftime("%Y年%m月%d日") %>
+        </span>
+      </div>
+      <%= link_to 'ホーム一覧へ戻る', blogs_path %>
+  </div>
+</div>

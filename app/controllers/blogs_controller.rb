@@ -1,21 +1,23 @@
 class BlogsController < ApplicationController
-  before_action :find_post, only:[:show, :edit, :update, :destroy]
+  
   
   def index
-    @lists = List.order(created_at: :desc)
+    @lists = List.all.order(created_at: :desc)
   end
 
   def show
+    @list = List.find(params[:id])
   end
   
   def new
+    @list = List.new
   end
   
   def edit
   end
 
   def create
-    @list = List.new(post_params)
+    @list = List.new(list_params)
     if @list.save
       redirect_to @list, notice: '作成できました'
     else
@@ -41,8 +43,7 @@ class BlogsController < ApplicationController
 
   private
   
-  def find_list
-    @list = List.find(params[:id])
+  def list_params
+    params.require(:list).permit(:title, :body)
   end
-  
 end
