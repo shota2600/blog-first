@@ -1,0 +1,13 @@
+
+<p>show</p>
+
+<h2>画像</h2>
+<%= image_tag @list.img.url %>
+<h2>タイトル</h2>
+<p><%= @list.title %></p>
+<h2>本文</h2>
+<p><%= @list.body %></p>
+
+
+<%= link_to '編集', edit_blog_path(@list) %>
+<%= link_to '削除', blog_path, method: :delete %>

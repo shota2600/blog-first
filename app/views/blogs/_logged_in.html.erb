@@ -1,0 +1,30 @@
+<!--<p>_logged_in.html</p>-->
+
+<div class="container">
+  <!-- 画像 -->
+    <div class="wrapper">
+      <div class="logo"> 
+        <img src="/images/family-album_icon.png" alt="" width="100%">
+      </div>
+    </div>
+  <!-- 概要 -->
+    <h2 class="blog_text">FAMILY-ALBUM</h2>
+    <p>子供の成長を記録するサイトです。</p>
+    <p></p>
+    
+  <!-- カード -->
+  <div class="row">
+    <% @lists.each do |blog| %>
+        <div class="howe_card-deck col-md-4">
+          <div class="card">
+            <%= image_tag blog.img.url, class:"dd" %>
+              <div class="home_card-body col-md-6">
+                <p class="home_card-title"><%= link_to blog.title, blog_path(blog) %></p>
+                <p class="home_card-text"><%= blog.created_at.strftime("%Y年%m月%d日") %></p>
+              </div>
+            </div>
+        </div>
+      <% end %>
+  </div>
+</div>
+

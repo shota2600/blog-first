@@ -1,26 +1,59 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <title>Memory-photo</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+
+    <!--<meta name="viewport" content="width=device-width,initial-scale=1">-->
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <!--<link rel="stylesheet" href="https://use.typekit.net/twu8mns.css">-->
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
+    <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>-->
+  
+    <title>FAMILY-ALUBUM | 画像投稿サイト</title>
   </head>
-
+  
   <header>
-      <h1>Memory-photo</h1>
-      <%= link_to 'ホーム', blogs_path %>
-      <%= link_to '新規投稿', new_blog_path %>
-      
+    <div class="container">
+     <!-- ナビゲーションメニュー -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand text-dark" href="#"><img src="/images/family-album.png" alt="" width="40%" height="30%" class="d-inline-block align-text-top"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ">
+          <a class="nav-link text-dark" href="#"> <%= link_to image_tag("home_icon.png", class:"home_switch"), root_path %> <span class="sr-only">HOME</span></a>
+          <a class="nav-link text-dark" href="#"> <%= link_to image_tag("post_icon.png", class:"post_switch"), new_blog_path %> <span class="sr-only">NEWPOST</span></a>
+          <a class="nav-link text-dark" href="#"> <%= link_to image_tag("logout_icon.png", class:"logout_switch"), logout_path, method: :delete %> <span class="sr-only">LOGOUT</span></a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
   </header>
 
   <body>
-      <%= yield %>
-  </body>
+    <%= yield %>
+  </body>    
+      
+  <footer>
+    <div class="container"> 
+        <div class="footer_main d-flex justify-content-around">
+          <ul class="nav justify-content-center bg-light col-md-12">
+            <li class="nav-item">
+              <a class="nav-link active"><%= link_to image_tag("home_icon.png", class:"home_switch"), root_path %> <span class="sr-only">HOME</span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </footer>
+      
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+  
 </html>

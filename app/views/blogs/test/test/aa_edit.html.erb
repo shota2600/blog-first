@@ -1,0 +1,17 @@
+<p>edit</p>
+
+<%= form_for(@list, url: blog_path(@list)) do |f| %>
+    <div>
+        <%= f.label :タイトル %><br>
+        <%= f.text_field :title, autofocus: true, :placeholder =>"#{@list.title}" %>
+    </div>
+    <div>
+        <%= f.label :コメント %><br>
+        <%= f.text_area :body, :placeholder =>"#{@list.body}" %>
+    </div>
+    <div>
+        <%= f.label :画像 %><br>
+        <%= f.file_field :img, :placeholder =>"#{@list.img}" %>
+    </div>
+    <div><%= f.submit "更新する" %></div>
+<% end %>

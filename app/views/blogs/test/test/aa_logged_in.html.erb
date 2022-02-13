@@ -1,0 +1,13 @@
+<p>_logged_in.html</p>
+
+<div class='index_image_top'>
+  <h1>投稿一覧</h1>
+    
+      <span>
+        <% @lists.each do |blog| %>
+        <%= link_to blog.title, blog_path(blog) %>
+        
+        
+      <% end %>
+    </span>
+</div>

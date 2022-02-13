@@ -1,0 +1,80 @@
+// Place all the styles related to the Sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+body {
+  font-family: 'Noto Sans', 'Noto Sans JP', sans-serif;
+  display: block;
+}
+
+
+// Sessions#new
+
+.login_comment {
+  background-image: url("/images/login_backimage.jpeg");
+  background-size: cover;
+  height:700px;
+}
+
+.offset-md-4 {
+  // position: relative;
+  // text-align: center;
+  // margin-left: auto;
+  // margin-right: auto;
+
+  // background-color: pink;
+}
+
+.card-img-top {
+  margin: 0 auto;
+}
+
+
+.login_menu {
+  width:200px;
+  // background-color: red;
+  margin: 0 auto;
+  // margin-bottom: 20px;
+  // text-align: right;
+  
+}
+
+.form-label {
+  // display: block;
+  // text-align: left;
+}
+
+.email_label {
+  // float: left;
+  width: 200px;
+  
+}
+
+.login_email {
+  // text-align: left;
+  // background-color: skyblue;
+  // display: block;
+  // width: 100%;
+  // padding-left: 0;
+  margin-left: 0;
+}
+
+.login_password {
+  // text-align: center;
+  // background-color: green;
+  // width: 100%;
+  // margin-left: 0;
+  // padding-left: 40px;
+}
+
+.password_label {
+  width: 200px;
+}
+
+.login_buttom {
+  text-align: center;
+  margin-top: 10px;
+}

@@ -1,8 +1,6 @@
 class BlogsController < ApplicationController
   
-  before_action :logged_in_user, only:[:edit, :update, :destroy]
-  # アクションが実行される前に、指定したprivateアクション（:logged_in_user）を実行することができる。
-
+  
   def index
     @lists = List.all.order(created_at: :desc)
   end
@@ -22,16 +20,25 @@ class BlogsController < ApplicationController
   def create
     @list = List.new(list_params) #データを新規登録するためのインスタンス変数
     @list.save
-    redirect_to blogs_path 
-    # '/blogs/new'
+      redirect_to '/blogs/new'
+      flash[:notice] = "投稿が保存されました"
+    else
+      redirect_to root_path
+      flash[:alert] = "投稿に失敗しました"
+    end
+    
+    # @list.save　# データをデータベースに保存するためのsaveメソッド実行
+    #  redirect_to action: 'index'
   end
   
   def update
     @list = List.find(params[:id])
     if @list.update(list_params)
-      redirect_to blogs_path
+      redirect_to request.referer
+      # , notice: '更新できました'
     else
-      render :new
+      render :edit
+      # , alert: '更新できませんでした'
     end
   end
   
@@ -39,12 +46,12 @@ class BlogsController < ApplicationController
   def destroy
     @list = List.find(params[:id])
     @list.destroy
-    redirect_to blogs_path
+    redirect_to request.referer
   end
 
   private
   
   def list_params # ストロングパラメータ
-    params.require(:list).permit(:title, :body, :img) # パラメーターのキー
+    params.require(:list).permit(:title, :body) # パラメーターのキー
   end
 end

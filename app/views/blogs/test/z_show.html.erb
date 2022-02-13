@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="show_main">
+    <%= image_tag 'child.jpeg', class: 'show_image_article' %>
+      <div class="show_article">
+        <h1 class="show_title text-center"><%= @list.title %></h1>
+        <p class="show_content"><%= @list.body %></p>
+        <span>
+          <%= @list.created_at.strftime("%Y年%m月%d日") %>
+        </span>
+      </div>
+      
+      <%= link_to '編集', edit_blog_path(@list) %>
+      <%= link_to 'ホーム', root_path %>
+  </div>
+</div>

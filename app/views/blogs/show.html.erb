@@ -1,13 +1,25 @@
+<!--<p>show.html</p>-->
+
 <div class="container">
-  <div class="show_main">
-    <%= image_tag 'child.jpeg', class: 'show_image_article' %>
-      <div class="show_article">
-        <h1 class="show_title text-center"><%= @list.title %></h1>
-        <p class="show_content"><%= @list.body %></p>
-        <span>
-          <%= @list.created_at.strftime("%Y年%m月%d日") %>
-        </span>
+  <div class="show_body">
+    <div class="card mb-3 show_main">
+      <div class="show_image">
+        <%= image_tag @list.img.url, class:"show_img"%>
       </div>
-      <%= link_to 'ホーム一覧へ戻る', blogs_path %>
+      <div class="show_form">
+        <div class="show_title">
+          <h5 class="show_card-title"><%= @list.title %></h5>
+        </div>
+        <div class="show_text">
+          <p class="show_card-text"><%= @list.body %></p>
+        </div>
+      </div>
+    </div>
+    <div class="show_root">
+      <a class="nav-link active show_link"><%= link_to image_tag("edit_icon.png", class:"edit_switch"), edit_blog_path(@list) %><span class="sr-only">EDIT</span></a>
+      <a class="nav-link active show_link"><%= link_to image_tag("delete_icon.png", class:"edit_switch"), blog_path, method: :delete %><span class="sr-only">DELETE</span></a>
+      <!--<%= link_to 'edit', edit_blog_path(@list) %>-->
+      <!--<%= link_to 'delete', blog_path, method: :delete %>-->
+    </div>
   </div>
 </div>

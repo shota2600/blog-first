@@ -1,0 +1,25 @@
+<!--<p>Sessions#new</p>-->
+
+<div class="container">
+  <div class="login_comment">
+    <div class="offset-md-4 card" style="width: 25rem; height: 25rem;">
+      <img src="/images/login_icon.png" class="card-img-top mx-auto d-block" alt="login_icon">
+        <div class="login_menu">
+          <%= form_for(:session, url: login_path) do |f| %>
+            <div class="login_email">
+              <label for="exampleFormControlInput1" class="form-label">Email</label>
+  　　          <%= f.email_field :email, {class: "email_label"} %>
+            </div>
+      　　    <div class="login_password ">
+              <label for="exampleFormControlInput1" class="form-label">Password</label>
+              <%= f.password_field :password, {class: "password_label"} %>
+            </div>
+            <div class="login_buttom">
+              <%= f.submit "Login", class:"login_bth" %>
+            </div>
+          <% end %>
+        </div>
+    </div>
+  </div>
+</div>
+  

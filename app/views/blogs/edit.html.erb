@@ -1,2 +1,55 @@
-<h1>Blogs#edit</h1>
-<p>Find me in app/views/blogs/edit.html.erb</p>
+<!--<p>edit</p>-->
+
+<div class="container">
+  <div class="edit_post">
+    <div class="card mb-3 edit_post_form">
+      <div class="edit_img_sample">
+        <img src="/images/gg.jpeg" alt="" width="100%" height="auto">
+      </div>
+        <%= form_for(@list, url: blog_path(@list)) do |f| %>
+        <div class="edit_image_form">
+          <%= f.file_field :img, :placeholder =>"#{@list.img}" %>
+        </div>
+        <div class="edit_form">
+          <div class="edit_title">
+            <h5 class="edit_form_title">Title</h5>
+            <%= f.text_field :title, autofocus: true, :placeholder =>"#{@list.title}", class:"edit_text_title" %>
+          </div>
+          <div class="edit_boby">
+            <h5 class="edit_form_body">Comment</h5>
+              <%= f.text_area :body, class:"edit_text_body" %>
+          </div>
+        </div>
+        <div class="edit_buttom">
+          <%= f.submit 'POST' %>
+        </div>
+        <% end %>
+    </div>
+  </div>
+</div>
+
+
+<!--<div class="new_post">-->
+<!--  <div class="container">-->
+<!--    <div class="row">-->
+<!--      <%= form_for(@list, url: blog_path(@list)) do |f| %>-->
+<!--        <div class="card mb-3">-->
+<!--          <%= f.label :image %><br>-->
+<!--          <%= f.file_field :img, :placeholder =>"#{@list.img}" %>-->
+<!--            <div class="new-body">-->
+<!--              <h5 class="new-title">Title</h5>-->
+<!--      　　　       <%= f.label :タイトル %><br>-->
+<!--                <%= f.text_field :title, autofocus: true, :placeholder =>"#{@list.title}" %>-->
+<!--      　　      <h5 class="form-title">Comment</h5>-->
+<!--      　　        <%= f.text_area :body %>-->
+<!--            </div>-->
+<!--            <%= f.submit '投稿' %>-->
+<!--          <% end %>-->
+<!--        </div>-->
+<!--     </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+
+

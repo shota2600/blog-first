@@ -1,0 +1,13 @@
+<%= form_for @list do |f| %>
+  <div class="form_title">
+    <%= f.label :title, 'タイトル' %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="form_body">
+    <%= f.label :body, 'コメント' %>
+    <%= f.text_area :body, rows: 10, class: 'form_contorol' %>
+  </div>
+  <div class="form_submit">
+    <%= f.submit '投稿' %>
+  </div>
+<% end %>

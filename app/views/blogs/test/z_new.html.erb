@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="edit_main">
+    <h1 class="edit_title text-center">新規</h1>
+      <%= image_tag 'child.jpeg', class: 'show_image_article' %>
+        <div class="new_form">
+          <%= form_with model: @list, true do |f| %>
+            <div class="form_title">
+              <%= f.label :title, 'タイトル' %>
+              <%= f.text_field :title %>
+            </div>
+            <div class="form_body">
+              <%= f.label :body, 'コメント' %>
+              <%= f.text_area :body, rows: 10, class: 'form_contorol' %>
+            </div>
+            <div class="form_submit">
+              <%= f.submit '投稿' %>
+            </div>
+          <% end %>
+        </div>
+      <%= link_to "編集", edit_blog_path(blog) %>
+      <%= link_to "削除", blog_path(list), method: :delete %>
+      <%= link_to 'ホーム', root_path %>
+      
+  </div>
+</div>
