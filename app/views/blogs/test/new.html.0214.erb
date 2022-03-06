@@ -1,0 +1,38 @@
+<!--<p>new.html</p>-->
+
+<div class="container">
+  <div class="new_post_main">
+    <div class="new_post_icon">
+      <img src="/images/mini_post_icon.png" alt="" class="new_post_icon">
+    </div>
+    <div class="new_post_title">
+      <h2 class="new_post_subtitle">NEW POST</h2>
+    </div>
+
+  <div class="new_post">
+    <div class="card mb-3 new_post_form">
+      <div class="img_sample">
+        <img src="/images/gg.jpeg" alt="" width="100%" height="auto">
+      </div>
+        <%= form_for(@list, url: "/blogs") do |f| %>
+        <div class="image_form">
+          <%= f.file_field :img, class: "image" %>
+        </div>
+        <div class="new_form">
+          <div class="new_title">
+            <h5 class="form-title">Title</h5>
+            <%= f.text_field :title, class:"text_title" %>
+          </div>
+          <div class="new_boby">
+            <h5 class="form_body">Comment</h5>
+            <%= f.text_area :body, :placeholder =>"#{@list.body}", class:"text_body" %>
+          </div>
+        </div>
+        <div class="new_buttom">
+          <%= f.submit "NEW POST" %>
+        </div>
+        <% end %>
+    </div>
+  </div>
+</div>
+  </div>

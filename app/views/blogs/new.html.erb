@@ -1,30 +1,36 @@
 <!--<p>new.html</p>-->
 
 <div class="container">
-  <div class="new_post">
-    <div class="card mb-3 new_post_form">
-      <div class="img_sample">
-        <img src="/images/gg.jpeg" alt="" width="100%" height="auto">
+  <div class="row">
+    <div class="col-md-11 new_post_main">
+      <div class="col-md-11 new_post_icon">
+        <h2 class="new_post_subtitle"><img src="/images/white_post_icon.png" alt="" class="new_post_icon">NEW POST</h2>
       </div>
-        <%= form_for(@list, url: "/blogs") do |f| %>
-        <div class="image_form">
-          <%= f.file_field :img, class: "image" %>
+      <div class="row">
+        <div class="col-md-5 new_post_image">
+          <%= form_for(@list, url: "/blogs") do |f| %>
+            <div class="new_post_img">
+              <img src="/images/gg.jpeg" alt="" width="100%" height="auto">
+            </div>
+            <div class="image_form">
+              <%= f.file_field :img, class: "image" %>
+            </div>
         </div>
-        <div class="new_form">
+        <div class="col-md-7 new_post_form">
           <div class="new_title">
             <h5 class="form-title">Title</h5>
             <%= f.text_field :title, class:"text_title" %>
           </div>
-          <div class="new_boby">
-            <h5 class="form_body">Comment</h5>
+          <div class="new_post_boby">
+            <h5 class="new_body">Comment</h5>
             <%= f.text_area :body, :placeholder =>"#{@list.body}", class:"text_body" %>
           </div>
-        </div>
-        <div class="new_buttom">
-          <%= f.submit "NEW POST" %>
-        </div>
-        <% end %>
+         </div>
+      </div>
+      <div class="new_buttom">
+        <%= f.submit "NEW POST" %>
+      </div>
+    <% end %>
     </div>
   </div>
 </div>
-

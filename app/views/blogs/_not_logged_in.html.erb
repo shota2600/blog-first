@@ -2,17 +2,17 @@
 
 <div class="container">
   <div class="not_login_comment">
-    <div class="not_offset-md-4 card" style="width: 25rem; height: 25rem;">
-      <img src="/images/login_icon.png" class="card-img-top mx-auto d-block" alt="login_icon">
-    <div class="not_card-body">
-      <h2 class="not_card-title">FAMILY-ALBUM</h2>
-        <h4 class="not_card-subtitle mb-2 text-muted">〜for ikka〜</h4>
-        <p class="not_card-text">下記リンクよりログイン↓↓↓</p>
-    </div>  
-    <div class="not_login_button">
-      <%= image_tag "login_icon.png", class: "login_image_article" %>
-      <%= link_to "LOGIN", login_path %>
-    </div>
+    <div class="not_login_menu">
+      <div class="not_login_logo">
+        <img src="/images/mini_icon.png" class="mini_logo" alt="mini_logo">
+      </div>
+      <div class="not_login_logo_two">
+        <img src="/images/family-album_logo.png" class="family_logo" alt="family_logo">
+      </div>
+      <div class="not_login_button">
+        <%= image_tag "mini_login_icon.png", class: "login_image_article" %>
+        <%= link_to "LOGIN", login_path, class:"loginlogin" %>
+      </div>
     </div>
   </div>
 </div>
